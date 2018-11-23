@@ -2,23 +2,22 @@ import queryString from 'query-string'
 import React from 'react'
 import { Grid, Header } from 'semantic-ui-react'
 import AuthPanel from '../components/AuthPanel'
-import {
-  Stitch,
-  UserPasswordAuthProviderClient
-} from 'mongodb-stitch-browser-sdk'
+import { UserPasswordAuthProviderClient } from 'mongodb-stitch-browser-sdk'
+import { stitchClient } from '../lib/stitch'
 
 let { Subheader } = Header
 let { Column, Row } = Grid
+let { auth } = stitchClient
 
 function Home({ location }) {
   let { token, tokenId } = queryString.parse(location.search)
 
   if (token && tokenId) {
-    let emailPassClient = Stitch.defaultAppClient.auth.getProviderClient(
+    let emailPassClient = auth.getProviderClient(
       UserPasswordAuthProviderClient.factory
     )
 
-    return emailPassClient.confirmUser(token, tokenId)
+    emailPassClient.confirmUser(token, tokenId)
   }
 
   return (
