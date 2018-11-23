@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "mongodb-stitch-browser-sdk": "^4.0.15-beta-1.0",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "query-string": "^6.2.0",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.83.0",
@@ -31,6 +33,7 @@
     "@types/node": "^10.12.10",
     "@types/react": "^16.7.7",
     "@types/react-dom": "^16.0.10",
+    "@types/react-router-dom": "^4.3.1",
     "prettier": "^1.15.2",
     "typescript": "^3.1.6"
   }
